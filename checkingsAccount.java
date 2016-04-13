@@ -3,8 +3,7 @@ public class checkingsAccount extends bankAccount {
 	{
 		super(intialBalance);
 		transactionCount = 0;
-	}
-	
+	}	
 	public void deposit(double amount) 
 	{
 		transactionCount++;
@@ -16,7 +15,6 @@ public class checkingsAccount extends bankAccount {
 		transactionCount++;
 		super.withdraw(amount); 
 	}
-
 	public void deductFees() 
 	{
 		if(transactionCount > free_Transactions) 

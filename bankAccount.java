@@ -1,39 +1,38 @@
-//import java.io.IOException;
+import java.util.Random;
 public class bankAccount
 {
 	public bankAccount() 
 	{
-		//cNumber = 0;
-		//pin = 0;
 		balance = 0;
+		customerNumber = getCustomerNumber();
 	}
 	public bankAccount(double initialBalance) 
 	{
-		//pin = pinNumber;
-		//customNumber = cNumber;
-		//double intialBalance;
 		balance = initialBalance;
+	}
+	public int getCustomerNumber() //need to fix the random generator
+	{
+		Random generator = new Random();
+		int cNumber = generator.nextInt(10);
+		return cNumber;
 	}
 	public void deposit(double amount) 
 	{
 		balance = balance + amount;
-		//balance = newBalance;
 	}
 	public void withdraw(double amount) 
 	{
 		balance = balance - amount;
-		//balance = newBalance;
 	}
 	public double getBalance() 
 	{
 		return balance;
 	}
-	public void transfer(double amount, bankAccount other) 
+	public void transfer(double amount, bankAccount other)
 	{
 		withdraw(amount);
 		other.deposit(amount);
 	}
-	//private int cNumber;
-	//private int pin;
+	private int customerNumber;
 	private double balance;
 }
